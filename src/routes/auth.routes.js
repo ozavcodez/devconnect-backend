@@ -19,8 +19,8 @@ const loginValidation = [
 ]
 
 // Routes
-router.post("/register", registerValidation, register)
-router.post("/login", loginValidation, login)
+router.post("/register", authLimiter, registerValidation, register)
+router.post("/login", authLimiter, loginValidation, login)
 router.get("/me", protect, getMe)
 
 export default router
