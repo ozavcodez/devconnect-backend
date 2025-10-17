@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const connectDB = async () => {
   try {
-     const mongoURI = process.env.MONGODB_URL || process.env.MONGODB_URI;
+     const mongoURI = process.env.MONGO_URL || process.env.MONGO_URI;
     
     if (!mongoURI) {
       throw new Error('MongoDB connection string not found in environment variables');
