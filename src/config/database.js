@@ -2,6 +2,11 @@ import mongoose from "mongoose"
 
 const connectDB = async () => {
   try {
+     const mongoURI = process.env.MONGODB_URL || process.env.MONGODB_URI;
+    
+    if (!mongoURI) {
+      throw new Error('MongoDB connection string not found in environment variables');
+    }
     const conn = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
