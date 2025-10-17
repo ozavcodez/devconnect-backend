@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/api/", rateLimiter)
 
 // Health check
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "success",
     message: "DevConnect API is running",
